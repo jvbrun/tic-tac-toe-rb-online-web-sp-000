@@ -101,21 +101,16 @@ def winner(board)
    end
 end
 
-#turn 
+#turn
 def turn(board)
-  puts "Please, enter 1-9:"
-  user_input = gets.strip
-  if user_input.to_i.between?(1,9)
-    index = input_to_index(user_input)
-    valid_move = valid_move?(board, index)
-    if valid_move?(board, index)
+   puts "Please enter 1-9:"
+   user_input = gets.strip
+   index = input_to_index(user_input)
+   if valid_move?(board, index)
       move(board, index, current_player(board))
       turn(board)
-    else
-      end
-    else
-    end
-      turn(board)
+   end
+   display_board(board)
 end
 
 #play 
